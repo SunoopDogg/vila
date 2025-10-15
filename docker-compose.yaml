@@ -1,22 +1,22 @@
 services:
-  kkalssam-python-template:
+  vila:
     build:
       context: .
-    image: node22.19.0-python3.13.7:trixie-slim-uv
-    container_name: kkalssam-python-template
+    image: cuda12.9.1-node22.20.0-python3.13.8:bookworm-slim-uv
+    container_name: vila
     tty: true
     ipc: host
     environment:
       - DISPLAY=${DISPLAY:-host.docker.internal:0}
       - QT_X11_NO_MITSHM=1
     volumes:
-      - .:/root/kkalssam-python-template
+      - .:/root/vila
       - /tmp/.X11-unix:/tmp/.X11-unix
 
-  kkalssam-python-template-gpu:
+  vila-gpu:
     extends:
-      service: kkalssam-python-template
-    container_name: kkalssam-python-template-gpu
+      service: vila
+    container_name: vila-gpu
     deploy:
       resources:
         reservations:
