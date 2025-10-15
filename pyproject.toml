@@ -18,6 +18,7 @@ dependencies = [
     "ps3-torch>=0.1.1",
     "requests>=2.32.5",
     "s2wrapper",
+    "termcolor>=3.1.0",
     "torch>=2.8.0",
     "uvicorn>=0.37.0",
 ]

@@ -98,6 +98,7 @@ class ChatCompletionRequest(BaseModel):
         "VILA1.5-13B-AWQ",
         "VILA1.5-40B",
         "VILA1.5-40B-AWQ",
+        "NVILA-Lite-8B",
     ]
     messages: List[ChatMessage]
     max_tokens: Optional[int] = 512
@@ -322,8 +323,8 @@ if __name__ == "__main__":
     host = os.getenv("VILA_HOST", "0.0.0.0")
     port = os.getenv("VILA_PORT", 8000)
     model_path = os.getenv(
-        "VILA_MODEL_PATH", "NVILA-Lite-8B-hf")
-    conv_mode = os.getenv("VILA_CONV_MODE", "auto")
+        "VILA_MODEL_PATH", "NVILA-Lite-8B")
+    conv_mode = os.getenv("VILA_CONV_MODE", "vicuna_v1")
     workers = os.getenv("VILA_WORKERS", 1)
 
     parser = argparse.ArgumentParser()
